@@ -383,7 +383,7 @@ void Perevod(char *mas, int size, int maxB, typeRait to)
 
 int copyS(char *mas1, char *mas2, int size)
 {
-	for ( i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		*mas2 = *mas1;
 		mas1++;
@@ -391,4 +391,33 @@ int copyS(char *mas1, char *mas2, int size)
 	}
 	*mas1 = '\0';
 	return 0;
+}
+
+void replacestr(char *str, char *old, char *tonew)
+{
+	int count;
+	for ( i = 0; i < strlen(str); i++)
+	{
+		if (str[i] == *old)
+		{
+			count++;
+			old++;
+			while (*old!='\0')
+			{
+				if (str[i] == *old)
+				{
+					old++;
+				}
+				i++;
+			}		
+		}
+		else
+		{
+			count = 0;
+		}
+		if (count == strlen(old))
+		{
+
+		}
+	}
 }

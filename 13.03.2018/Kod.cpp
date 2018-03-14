@@ -219,13 +219,31 @@ void main()
 		else if (nz == 8)
 		{
 			system("cls");
-			/*2.Дан массив символов, в котором встречаются структуры <i> и </i>. Заменить каждое вхождение <i> на </i>, 
-			а каждое вхождение </i> на <#>. Замечание: в программе следует учесть, что буква i может быть, как строчной, так и прописной.*/
+			/*4.Дан массив символов, содержащий текст. Определить длину содержащейся в нем максимальной серии символов, отличных от букв.*/
 			
-			for ( i = -128; i <= 256; i++)
-			{
-				printf("%d - %c\t", i, i);
-			}
+			static char str[256] = "abc38494defghi4959384759387i0874598398579438759438435\0";
+
+			printf("string = %s\n", str);
+
+			char output[256] = "\0";
+			int max_len = 0, pos = max_len;
+			for (int i = 0; str[i] != '\0'; i++)
+				if (isdigit(str[i]))
+				{
+					int l = i, n = 0; char digits[256] = "\0";
+					while (isdigit(str[i]) && str[i] != '\0')
+						digits[n++] = str[i++];
+
+					if (abs(l - i) > max_len || max_len == 0)
+					{
+						strcpy(output, digits);
+						max_len = abs(l - i);
+						pos = l;
+					}
+				}
+
+			printf("output = %s pos = %d len = %d\n", output, pos, max_len);
+
 
 		}
 

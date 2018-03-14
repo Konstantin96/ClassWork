@@ -182,7 +182,7 @@ void main()
 			copyS(s2, s1, r);
 			printf("%s\n", s1);
 		}
-
+		//test
 		else
 		{
 			printf("Такого задания нет!");
